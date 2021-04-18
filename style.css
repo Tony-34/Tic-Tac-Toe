@@ -1,0 +1,392 @@
+:root {
+    --background: #333333;
+    --primary: #7DCFB6;
+    --secondary: #1D4E89;
+    --tertiary: #F79256;  
+    --transparent: rgba(255, 255, 255, 0.5);
+    --font: 'Peralta', cursive;
+    --startScreenOpacity_original: 1;
+    --startScreenOpacity_new: 1;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--background);
+    /* padding-top: 2rem; */
+    font-family: var(--font);
+    overflow: hidden;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+    /* border: solid green; */
+}
+
+#start-screen, #round-over {
+    position: absolute;
+    /* background: rgb(0, 0, 0, 0.9); */
+    background: var(--secondary);
+    color: var(--tertiary);
+    height: 100%;
+    width: 100%;
+    z-index: 50;
+    /* opacity: 0; */
+}
+
+#start-screen {
+    /* display: none; */
+    display: block;
+    background: var(--secondary);
+    animation-name: startScreen;
+    animation-duration: 3s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes startScreen {
+    0% {
+        opacity: var(--startScreenOpacity_original);
+    }
+    100% {
+        opacity: var(--startScreenOpacity_new);
+    }
+}
+
+#start-screen span {
+    position: relative;
+    top: 25rem;
+    left: 37rem;
+    font-size: 2em;
+    padding-left: 2rem;
+}
+
+#start-screen h1 {
+    position: absolute;
+    top: 15rem;
+    left: 35rem;
+    font-size: 5em;
+    animation-name: title;
+    animation-duration: 3s;
+    animation-iteration-count: 20;
+    animation-direction: alternate;
+    margin-bottom: 20rem;
+    /* border: solid green; */
+}
+
+@keyframes title {
+    from {
+        font-size: 5em;
+    }
+    to {
+        font-size: 6em;
+        left: 33rem;
+    }
+}
+
+
+.background-icons {
+    position: absolute;
+    bottom: -30px;
+    left: 3rem;
+    width: 95%;
+    /* border: solid green; */
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.background-icons img {
+    height: 2em;
+    animation-name: icons;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    /* animation-direction: ; */
+    opacity: .5;
+    z-index: -10;
+}
+
+@keyframes icons {
+    0% {
+    
+    }
+    25% {
+    }
+    50% {
+        /* height: 3em; */
+    }
+    75% {
+    }
+    80% {
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+    }
+}
+
+#start-btn, .button_playAgain {
+    display: block;
+    width: 35em;
+    height: 2em;
+    background: none;
+    border: var(--tertiary) solid 1px;
+    margin: 3rem 0 0 0;
+    font-family: var(--font);
+    color: var(--tertiary);
+}
+
+#round-over {
+    animation-name: round-over;
+    animation-duration: 2s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    transform: translate(1500px);
+    opacity: 0;
+
+}
+
+.button_playAgain {
+    margin-left: 20px;
+}
+
+
+/* @keyframes round-over {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 0.9;
+    }
+} */
+
+.round-info {
+    position: relative;
+    top: 20rem;
+    left: 36rem;
+    font-size: 4em;
+}
+
+.end-of-round-score {
+    padding-left: 12rem;
+}
+
+
+#round-select {
+    background: var(--secondary);
+    border: #000 solid 1px;
+    /* height: 1rem; */
+    width: 5rem;
+    margin-left: 1rem;
+    font-family: var(--font);
+    color: var(--tertiary);
+}
+
+
+#start-btn {
+    position: absolute;
+    top: 30rem;
+    left: 36rem;
+}
+
+#start-btn:hover, .button_playAgain:hover {
+    cursor: pointer;
+}
+
+#score-board, 
+#dialogue-box {
+    display: grid;
+    justify-items: center;
+    color: var(--secondary);
+    font-size: .8em;
+    font-weight: normal;
+    height: 4em;
+    width: 80%;
+    margin: auto ;
+    padding: 0 2rem;
+}
+
+#score-board {
+    grid-template-columns: 1fr 1fr 1fr 2fr;  
+    border-bottom: var(--secondary) solid 1px;
+    /* box-shadow: 2px 5px;   */
+}
+
+#score-board h1, #score-board h2 {
+    padding-top: 1.5rem;
+}
+
+#score-board span {
+    padding-left: 1rem; 
+}
+
+#board {
+    /* border: solid 2px #fff; */
+    /* width: 20rem; */
+    /* height: 20rem; */
+    width: 100%;
+    height: 100%;
+    margin: 4rem auto 1rem auto;
+}
+
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100%;
+}
+
+.row1, 
+.row2 {
+    border-bottom: solid 1px #fff;
+}
+
+.cell {
+    border-right: solid #fff 1px;
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 5em;
+    color: var(--transparent);
+    min-height: 4rem;
+}
+
+.cell:hover {
+    cursor: pointer;
+}
+
+.cell:last-child {
+    border-right: none;
+}
+
+
+#dialogue-box {
+    grid-template-columns: repeat(3, 1fr);
+    border-top: solid var(--secondary) 1px;
+    margin-top: 3rem;
+}
+
+#dialogue-box h1, #dialogue-box h2 {
+    font-size: 2em;
+    font-weight: 1em;
+    padding-top: 1rem;
+    /* padding-right: 5rem; */
+    /* border-right: solid var(--secondary); */
+}
+
+#dialogue-box h2 {
+    padding-right: 0;
+}
+
+.current-round {
+    padding-left: 1em;
+}
+
+.button_quit {
+    height: 3rem;
+    background: none;
+    border: none;
+    font: var(--font);
+    font-size: 2em;
+    font-weight: bold;;
+    color: var(--secondary);
+    margin-top: .6rem; 
+}
+
+.button_quit:hover {
+    cursor: pointer;
+}
+
+
+/* -------------------------------Mobile----------------------------- */
+
+
+@media (max-width: 500px) {
+
+    .container {
+        width: 85%;
+        margin: auto;
+        /* border: solid green; */
+    }
+    #round-over {
+        position: absolute;
+        background: rgb(0, 0, 0, 0.9);
+        color: #fff;
+        height: 100%;
+        width: 100%;
+        z-index: 50;
+    }
+    
+    #round-over span {
+        position: relative;
+        top: 20rem;
+        left: 8rem;
+        font-size: 2em;
+    }
+
+    #score-board, 
+    #dialogue-box {
+        padding: 0;
+    } 
+
+    #score-board {
+        width: 90%;
+    }
+
+    #score-board h1 {
+        padding-top: .7rem;
+    }
+    
+    #score-board span {
+        padding-left: 1rem; 
+    }
+
+    .cell {
+        font-size: 4em;
+        min-height: 2rem;
+    }
+    
+}
+
+@media (min-width: 501px) and
+       (max-width: 1024px) {
+
+        .container {
+            width: 70%;
+            margin: auto;
+            /* border: solid green; */
+        }
+
+        #round-over {
+            position: absolute;
+            background: rgb(0, 0, 0, 0.9);
+            color: #fff;
+            height: 100vh;
+            width: 100vw;
+            z-index: 50;
+        }
+        
+        #round-over span {
+            position: relative;
+            top: 30rem;
+            left: 19rem;
+            font-size: 2em;
+        }
+
+        .cell {
+            min-height: 5rem;
+        }
+
+        #board {
+            margin: 2rem auto;
+        }
+}
+
+
+

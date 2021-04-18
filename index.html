@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Game</title>
+
+    <link href="./style.css" rel="stylesheet" />
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Peralta&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="round-over">
+        <div class="round-info">
+        </div>
+        <div class="background-icons">
+            <img class="circle-icon" src="./iconfinder_circle-o_1608630.png" alt="">
+            <img class="x-icon" src="./iconfinder_essential_set_close_1110973.png" alt="">
+            <img class="circle-icon" src="./iconfinder_circle-o_1608630.png" alt="">
+            <img class="x-icon" src="./iconfinder_essential_set_close_1110973.png" alt="">
+            <img class="circle-icon" src="./iconfinder_circle-o_1608630.png" alt="">
+            <img class="x-icon" src="./iconfinder_essential_set_close_1110973.png" alt="">
+            <img class="circle-icon" src="./iconfinder_circle-o_1608630.png" alt="">
+            <img class="x-icon" src="/iconfinder_essential_set_close_1110973.png" alt="">
+            <img class="circle-icon" src="./iconfinder_circle-o_1608630.png" alt="">
+            <img class="x-icon" src="/iconfinder_essential_set_close_1110973.png" alt="">
+            <img class="circle-icon" src="./iconfinder_circle-o_1608630.png" alt="">
+            <img class="x-icon" src="/iconfinder_essential_set_close_1110973.png" alt="">
+            <img class="circle-icon" src="./iconfinder_circle-o_1608630.png" alt="">
+            <img class="x-icon" src="/iconfinder_essential_set_close_1110973.png" alt="">
+            <img class="circle-icon" src="./iconfinder_circle-o_1608630.png" alt="">
+            <img class="x-icon" src="/iconfinder_essential_set_close_1110973.png" alt="">
+        </div>
+    </div>
+    <div id="start-screen">
+        <h1>Tic Tac Toe</h1>
+        <span>
+            <label>
+                Best Of...
+            </label>
+            <select name="rounds" id="round-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </span>
+        <button id="start-btn">Start Game</button>
+
+        <div class="background-icons">
+            <img class="circle-icon" src="./iconfinder_circle-o_1608630.png" alt="">
+            <img class="x-icon" src="./iconfinder_essential_set_close_1110973.png" alt="">
+            <img class="circle-icon" src="./iconfinder_circle-o_1608630.png" alt="">
+            <img class="x-icon" src="./iconfinder_essential_set_close_1110973.png" alt="">
+            <img class="circle-icon" src="./iconfinder_circle-o_1608630.png" alt="">
+            <img class="x-icon" src="./iconfinder_essential_set_close_1110973.png" alt="">
+            <img class="circle-icon" src="./iconfinder_circle-o_1608630.png" alt="">
+            <img class="x-icon" src="/iconfinder_essential_set_close_1110973.png" alt="">
+            <img class="circle-icon" src="./iconfinder_circle-o_1608630.png" alt="">
+            <img class="x-icon" src="/iconfinder_essential_set_close_1110973.png" alt="">
+            <img class="circle-icon" src="./iconfinder_circle-o_1608630.png" alt="">
+            <img class="x-icon" src="/iconfinder_essential_set_close_1110973.png" alt="">
+            <img class="circle-icon" src="./iconfinder_circle-o_1608630.png" alt="">
+            <img class="x-icon" src="/iconfinder_essential_set_close_1110973.png" alt="">
+            <img class="circle-icon" src="./iconfinder_circle-o_1608630.png" alt="">
+            <img class="x-icon" src="/iconfinder_essential_set_close_1110973.png" alt="">
+        </div>
+    </div>
+    <div id="score-board">
+        <h1>Score:</h1>
+        <h1>Player 1: <span class="p1-score">0</span></h1>
+        <h1>Player 2: <span class="p2-score">0</span></h1>
+        <h2>Best Of...<span class="bestOf">1</span></h1>
+    </div>
+    <div class="container">
+        <div id="board">
+            <div class="row row1">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row row2">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="row row3">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+        </div>
+
+
+        <div id="dialogue-box">
+            <h1>Player <span class="current-player">1</span></h1>
+            <h2>Round<span class="current-round">1</span></h2>
+            <button class="button_quit">Quit</button>
+        </div>
+    </div>
+
+    <script type="module" src="logic.js"></script>
+</body>
+
+</html>
